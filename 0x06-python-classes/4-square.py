@@ -4,11 +4,9 @@ Defines a class Square
 """
 
 
-class square:
-    """Represents a square
-    Attributes:
-        __size (int): size of a side of the square
-    """
+class square():
+    """square class with size and validation"""
+
     def __init__(self, size=0):
         """initializes the square"""
         self.__size = size
@@ -21,9 +19,9 @@ class square:
     @size.setter
     def size(self, value):
         """sets size to a value"""
-        if type(value) is not int:
+        if (type(value) is not int):
             raise TypeError("size must be an integer")
-        elif value < 0:
+        elif (value < 0):
             raise ValueError("size must be >= 0")
         self.__size = value
 
