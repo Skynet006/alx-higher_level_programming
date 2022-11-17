@@ -8,11 +8,11 @@ class Node():
     def __init__(self, data, next_node=None):
         """Instantiation of a singly-linked list node
         Args:
-        data (int): data contained in the node
-        next_node (Node, optional): the next node of the list
+            data (int): data contained in the node
+            next_node (Node, optional): the next node of the list
         Raises:
-        TypeError: if the data is not an integer of next_node is not
-        a Node instance
+            TypeError: if the data is not an integer of next_node is not
+            a Node instance
         """
 
         if type(data) != int:
@@ -28,7 +28,7 @@ class Node():
     def data(self):
         """Returns the data value in the current node
         Returns:
-        data value contained in current node
+            data value contained in current node
         """
 
         return self.__data
@@ -37,9 +37,9 @@ class Node():
     def data(self, value):
         """Sets the data value of the current node
         Args:
-        data (int): the new data value of the node
+            data (int): the new data value of the node
         Raises:
-        TypeError: when the data value is not an integer
+            TypeError: when the data value is not an integer
         """
 
         if type(value) != int:
