@@ -56,4 +56,3 @@ class Rectangle:
             string += "\n".join("#" * self.__width
                                 for j in range(self.__height))
         return string
-        
