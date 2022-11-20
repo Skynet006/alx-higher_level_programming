@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-"""
-Module 0-read_file
-Contain function that read a text file and print to stdout
-"""
+
+"""Defines a text file-reading function."""
 
 
 def read_file(filename=""):
-    """read from tetx file and print to stdout"""
-    with open(filename, mode='r', encoding="utf-8") as fname:
-        print(fname.read(), end="")
+    """Print the contents of a UTF8 text file to stdout."""
+    with open(filename, encoding="utf-8") as f:
+        print(f.read(), end="")
