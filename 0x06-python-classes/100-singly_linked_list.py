@@ -50,7 +50,7 @@ class Node():
     def next_node(self):
         """Retrieves the next_node of the current node
         Returns:
-        the next_node of the current node
+            the next_node of the current node
         """
 
         return self.__next_node
@@ -59,9 +59,9 @@ class Node():
     def next_node(self, value):
         """Sets a new next_node value for the current node
         Args:
-        value (Node): the new node
+            value (Node): the new node
         Raises:
-        TypeError: if the next_node is not a Node instance
+            TypeError: if the next_node is not a Node instance
         """
 
         if value is None or isinstance(value, Node):
@@ -70,48 +70,48 @@ class Node():
             raise TypeError("next_node must be a Node object")
 
 
-    class SinglyLinkedList():
-        """Singly-linked list class - starts out empty"""
+class SinglyLinkedList():
+    """Singly-linked list class - starts out empty"""
 
-        def __init__(self):
-            """Initializes an empty singly linked list object"""
+    def __init__(self):
+        """Initializes an empty singly linked list object"""
 
-            self.__head = None
+        self.__head = None
 
-        def sorted_insert(self, value):
-            """Inserts a Node into the linked list in a sorted fashion
-            Arg:
+    def sorted_insert(self, value):
+        """Inserts a Node into the linked list in a sorted fashion
+        Arg:
             value (int): the Node value
-            Raises:
+        Raises:
             TypeError: if the value supplied to the node is not an integer
-            """
+        """
 
-            if type(value) != int:
-                raise TypeError("data must be an integer")
-            temp = None
-            iterator = self.__head
-            new_node = Node(value)
-            if iterator is None:
-                new_node.__next_node = None
-                self.__head = new_node
+        if type(value) != int:
+            raise TypeError("data must be an integer")
+        temp = None
+        iterator = self.__head
+        new_node = Node(value)
+        if iterator is None:
+            new_node.__next_node = None
+            self.__head = new_node
 
-            else:
-                while iterator is not None and value > iterator.data:
-                    temp = iterator
-                    iterator = iterator.__next_node
-                if temp is None:
-                    new_node.__next_node = self.__head
-                    self.__head = new_node
-                else:
-                    temp.__next_node = new_node
-                    new_node.__next_node = iterator
-
-        def __str__(self):
-            """Default printing operation for the class when print() is called"""
-
-            linked_list = []
-            iterator = self.__head
-            while iterator is not None:
-                linked_list.append(iterator.data)
+        else:
+            while iterator is not None and value > iterator.data:
+                temp = iterator
                 iterator = iterator.__next_node
-            return ('\n'.join(str(i) for i in linked_list))
+            if temp is None:
+                new_node.__next_node = self.__head
+                self.__head = new_node
+            else:
+                temp.__next_node = new_node
+                new_node.__next_node = iterator
+
+    def __str__(self):
+        """Default printing operation for the class when print() is called"""
+
+        linked_list = []
+        iterator = self.__head
+        while iterator is not None:
+            linked_list.append(iterator.data)
+            iterator = iterator.__next_node
+        return ('\n'.join(str(i) for i in linked_list))
