@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <Python.h>
+
 /**
  * print_python_list_info -prints info about a python list.
  * @p: PyObject
  * Return: void
  */
+
 void print_python_list_info(PyObject *p)
+
 {
 	long int size, i;
 	PyListObject *list;
